@@ -20,7 +20,7 @@ android.ndk = 25b
 android.ndk_path =
 android.sdk_path =
 android.ant_path =
-android.gradle_dependencies = 'androidx.core:core:1.12.0'
+android.gradle_dependencies = androidx.core:core:1.12.0
 android.gradle_api_version = 8
 android.archs = arm64-v8a
 
