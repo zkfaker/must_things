@@ -28,10 +28,17 @@ jobs:
             pkg-config autoconf automake libtool libltdl-dev unzip zip \
             openjdk-17-jdk
 
+      - name: Set Java 17 as default
+        run: |
+          sudo update-alternatives --set java /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+          echo "JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> $GITHUB_ENV
+          java -version
+
       - name: Install Python packages
         run: |
           pip install --upgrade pip
-          pip install --upgrade buildozer cython
+          pip install --upgrade buildozer
+          pip install "cython==0.29.37"
 
       - name: Cache .buildozer
         id: cache-buildozer
